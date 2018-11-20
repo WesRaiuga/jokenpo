@@ -19,10 +19,14 @@ main{
     outline: none;
     cursor: pointer;
     box-shadow: 0 9px #999;
+    background-color: #b9b9b9;
 }
 .btn:active{
     box-shadow: 0 4px #666;
     transform: translateY(4px);
+}
+.invisivel{
+    visibility: hidden;
 }
 
 /* Seção Título */
@@ -33,7 +37,6 @@ main{
 
 /* Seção Escolhas */
 #escolhas{
-    width: 700px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -42,8 +45,9 @@ main{
     font-size: 20px;
     text-align: center;
 }
-.img-escolha{
+#mao-cpu, #mao-jogador{
     height: 170px;
+    width: 240px;
     opacity: 0.4;
     animation-name: floating;
     animation-duration: 2s;
@@ -63,28 +67,36 @@ main{
 #versus img{
     width: 70px;
 }
-#versus p{
-    margin: 0;
-    font-size: 36px;
+#mostrador{
+    width: 220px;
+    margin-top: 20px;
+    font-size: 25px;
     text-align: center;
     color: #002fff;
-    visibility: hidden;
 }
 
 /* Seção Controles */
 #controles{
-    margin: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-#controles > div:first-child{
-    width: 300px;
+#controles > div:last-child{
+    margin: 10px 0;
+}
+#botoes{
+    width: 340px;
     display: flex;
     justify-content: space-evenly;
 }
-#controles > div:last-child{
-    margin: 30px 0;
+#botoes > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+}
+#botoes > div > p{
+    visibility: hidden;
 }
 
 .btn-jkp{
@@ -97,37 +109,44 @@ main{
     height: 30px;
 }
 
-.btn-jkp:nth-child(1){
-    background-color: #ff2825;
-}
-.btn-jkp:nth-child(1):hover{
-    background-color: #bb0200;
-}
-
-.btn-jkp:nth-child(2){
-    background-color: #ffff00;
-}
-.btn-jkp:nth-child(2):hover{
-    background-color: #b3a706;
-}
-
-.btn-jkp:nth-child(3){
-    background-color: #00a000;
-}
-.btn-jkp:nth-child(3):hover{
-    background-color: #006600;
-}
-
 .btn-jogar{
     padding: 15px 32px;
     text-align: center;
-    color: white;
-    background-color: #1ba8e9;
+    color: #000;
     font-family: 'Splatter Kings', sans-serif;
     font-size: 20px;
     letter-spacing: 5px;
     border-radius: 15px;
+    cursor: not-allowed;
 }
-.btn-jogar:hover{
-    background-color: #1786b9;
+
+/* Mobile */
+@media only screen and (max-width: 700px){
+    #titulo h1{
+        margin: 2px 0 10px 0;
+        font-size: 30px;
+    }
+    #escolhas{
+        flex-flow: column-reverse;
+    }
+    #mao-cpu, #mao-jogador{
+        height: 85px;
+        width: 120px;
+    }
+    #versus img{
+        width: 35px;
+    }
+    #mostrador{
+        width: auto;
+        font-size: 15px;
+    }
+    .label{
+        margin: 10px 0;
+    }
+    #botoes{
+        margin-top: 20px;
+    }
+    .lb-jkp{
+        margin: 5px 0;
+    }
 }
