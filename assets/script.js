@@ -12,20 +12,20 @@ let btnJKP = document.querySelectorAll('.btn-jkp');
 /* EVENTOS DE CLIQUE NOS BOTÕES */
 pedra.onclick = () => {
     escolhaJogador = 'user-pedra';
+    mostrador.style = 'visibility: hidden;';
     darFeedbackEscolha(0, 1, 2, '#ff2825');
-    esconderMostrador();
     habilitarStart();
 }
 papel.onclick = () => {
     escolhaJogador = 'user-papel';
+    mostrador.style = 'visibility: hidden;';
     darFeedbackEscolha(1, 0, 2, '#ffff00');
-    esconderMostrador();
     habilitarStart();
 }
 tesoura.onclick = () => {
     escolhaJogador = 'user-tesoura';
+    mostrador.style = 'visibility: hidden;';
     darFeedbackEscolha(2, 0, 1, '#00a000');
-    esconderMostrador();
     habilitarStart();
 }
 start.onclick = () => {
@@ -44,10 +44,6 @@ start.onclick = () => {
 }
 
 /* FUNÇÕES AUXILIARES */
-function esconderMostrador(){
-    mostrador.style = 'visibility: hidden;';
-}
-
 function darFeedbackEscolha(mostrar, apagar1, apagar2, cor){
     lbJKP[mostrar].style = 'visibility: visible;';
     lbJKP[apagar1].style = 'visibility: hidden;';
@@ -86,29 +82,27 @@ function verificarResultado(){
     let user = escolhaJogador.substring(5);
     let resultado = '';
 
-    if (cpu == 'pedra') {
-        if (user == 'pedra') {
-            resultado = "it's a draw";
-        } else if (user == 'papel') {
-            resultado = "You Win";
-        } else {
-            resultado = "CPU Wins";
-        }
-    } else if (cpu == 'papel') {
-        if (user == 'pedra') {
-            resultado = "CPU Wins";
-        } else if (user == 'papel') {
-            resultado = "it's a draw";
-        } else {
-            resultado = "You Win";
-        }
+    if (cpu == user){
+        resultado = "It's a draw";
     } else {
-        if (user == 'pedra') {
-            resultado = "You Win";
-        } else if (user == 'papel') {
-            resultado = "CPU Wins";
+        if (cpu == 'pedra') {
+            if (user == 'papel') {
+                resultado = "You Win";
+            } else {
+                resultado = "CPU Wins";
+            }
+        } else if (cpu == 'papel') {
+            if (user == 'pedra') {
+                resultado = "CPU Wins";
+            } else {
+                resultado = "You Win";
+            }
         } else {
-            resultado = "it's a draw";
+            if (user == 'pedra') {
+                resultado = "You Win";
+            } else {
+                resultado = "CPU Wins";
+            }
         }
     }
     return resultado;

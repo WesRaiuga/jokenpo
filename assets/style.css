@@ -4,29 +4,26 @@
     src: url(fonts/Splatter\ Kings.ttf) format("truetype");
 }
 body{
-    margin: 0;
-    font-family: 'Splatter Kings', sans-serif;
     background-color: #ebebeb;
+    font-family: 'Splatter Kings', sans-serif;
     letter-spacing: 3px;
+    margin: 0;
 }
 main{
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 .btn{
-    border: none;
-    outline: none;
-    cursor: pointer;
-    box-shadow: 0 9px #999;
     background-color: #b9b9b9;
+    border: none;
+    box-shadow: 0 9px #999;
+    cursor: pointer;
+    outline: none;
 }
 .btn:active{
     box-shadow: 0 4px #666;
     transform: translateY(4px);
-}
-.invisivel{
-    visibility: hidden;
 }
 
 /* Seção Título */
@@ -37,22 +34,22 @@ main{
 
 /* Seção Escolhas */
 #escolhas{
+    align-items: center;
     display: flex;
     justify-content: space-around;
-    align-items: center;
 }
 .label{
     font-size: 20px;
     text-align: center;
 }
 #mao-cpu, #mao-jogador{
-    height: 170px;
-    width: 240px;
-    opacity: 0.4;
     animation-name: floating;
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
+    height: 170px;
+    opacity: 0.4;
+    width: 240px;
 }
 @keyframes floating {
     from { transform: translate(0,  0px); }
@@ -60,39 +57,39 @@ main{
     to   { transform: translate(0, -0px); }    
 }
 #versus{
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 #versus img{
     width: 70px;
 }
 #mostrador{
-    width: 220px;
-    margin-top: 20px;
-    font-size: 25px;
-    text-align: center;
     color: #002fff;
+    font-size: 25px;
+    margin-top: 20px;
+    text-align: center;
+    width: 220px;
 }
 
 /* Seção Controles */
 #controles{
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 #controles > div:last-child{
     margin: 10px 0;
 }
 #botoes{
-    width: 340px;
     display: flex;
     justify-content: space-evenly;
+    width: 340px;
 }
 #botoes > div{
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 80px;
 }
 #botoes > div > p{
@@ -100,31 +97,31 @@ main{
 }
 
 .btn-jkp{
-    width: 60px;
+    border-radius: 50%;
     height: 60px;
     padding: 10px 10px;
-    border-radius: 50%;
+    width: 60px;
 }
 .btn-jkp img{
     height: 30px;
 }
 
 .btn-jogar{
-    padding: 15px 32px;
-    text-align: center;
+    border-radius: 15px;
     color: #000;
+    cursor: not-allowed;
     font-family: 'Splatter Kings', sans-serif;
     font-size: 20px;
     letter-spacing: 5px;
-    border-radius: 15px;
-    cursor: not-allowed;
+    padding: 15px 32px;
+    text-align: center;
 }
 
 /* Mobile */
 @media only screen and (max-width: 700px){
     #titulo h1{
-        margin: 2px 0 10px 0;
         font-size: 30px;
+        margin: 2px 0 10px 0;
     }
     #escolhas{
         flex-flow: column-reverse;
@@ -137,9 +134,9 @@ main{
         width: 35px;
     }
     #mostrador{
-        width: auto;
-        margin-top: 0;
         font-size: 20px;
+        margin-top: 0;
+        width: auto;
     }
     .label{
         margin: 10px 0;
